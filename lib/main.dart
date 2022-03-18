@@ -1,4 +1,5 @@
 import 'package:fleska_assignment/Screens/Home.dart';
+import 'package:fleska_assignment/Screens/MapPage.dart';
 import 'package:fleska_assignment/Utils/Constants.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,11 @@ class MyApp extends StatelessWidget {
         primaryColor: KprimaryYellow,
         fontFamily: "Poppins",
       ),
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/second': (context) => MapPage(),
+      },
     );
   }
 }

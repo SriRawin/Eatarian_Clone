@@ -1,4 +1,3 @@
-import 'package:fleska_assignment/Screens/MapPage.dart';
 import 'package:fleska_assignment/Utils/Constants.dart';
 import 'package:fleska_assignment/Utils/responsive_template.dart';
 import 'package:flutter/cupertino.dart';
@@ -59,12 +58,7 @@ class CustomSearchBar extends StatelessWidget {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(10),
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapPage(),
-                      ),
-                    );
+                    Navigator.pushNamed(context, "/second");
                   },
                   splashColor: Colors.transparent,
                   child: Container(

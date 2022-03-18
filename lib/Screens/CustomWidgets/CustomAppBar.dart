@@ -1,3 +1,4 @@
+import 'package:fleska_assignment/Screens/CustomWidgets/AnimatedButton.dart';
 import 'package:fleska_assignment/Screens/CustomWidgets/ButtonWithUnderline.dart';
 import 'package:fleska_assignment/Utils/responsive_template.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,9 +13,16 @@ class CustomAppBar extends StatelessWidget {
       return Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            "images/logo.webp",
-            scale: 1.16,
+          InkWell(
+            onTap: () {
+              Navigator.canPop(context)
+                  ? Navigator.pop(context)
+                  : Navigator.pushReplacementNamed(context, '/');
+            },
+            child: Image.asset(
+              "images/logo.webp",
+              scale: 1.16,
+            ),
           ),
           hasSearchBar
               ? Container(
@@ -66,6 +74,9 @@ class CustomAppBar extends StatelessWidget {
               isUnderlined: false,
               text: "ENGLISH",
             ),
+          ),
+          AnimatedButton(
+            size: size,
           ),
         ],
       );
